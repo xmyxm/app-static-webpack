@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "build": "gulp",
+        "postpublish": ""
+    },
+    "dist": "./dist",
+    "output": "./html",
+    "urlPrefix": "./",
+    "static-src": "static",
+    "ignoreJsMin": false,
+    "env": "product"
+}
