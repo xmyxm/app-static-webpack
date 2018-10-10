@@ -42,23 +42,6 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.scss$/,
-				use: [
-					{
-						loader: devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-						options: {
-							// 您可以在这里指定公共路径,默认情况下，它在webpackOptions.output中使用publicPath
-						}
-					},
-					{
-						loader: 'css-loader',
-						options: { minimize: true }
-					},
-					'postcss-loader',
-					'sass-loader'
-				]
-			},
-			{
 				test: /\.less$/,
 				use: [
 					{
