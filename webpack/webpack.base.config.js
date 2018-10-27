@@ -11,7 +11,8 @@ const devMode = f2eci.env == 'dev'
 
 module.exports = {
 	entry:{
-		mobike:['./src/page/mobike.js']
+		mobike:['./src/page/mobike.js'],
+		qashare:['./src/page/qashare.js']
 		//,common:['react','redux']
 	},
 	output:{
@@ -139,6 +140,17 @@ module.exports = {
 			,title:'服务授权'
 			,inject:'body'//脚本包含到body 也可以写到head里面
 			,chunks:['manifest', 'vendors', 'common', 'mobike']//指定当前模板需要打入哪些js模块
+			,minify:{//启用代码代码压缩
+				removeComments:true,//移除注释
+				collapseWhitespace:true//移除空格
+			}
+		}),
+		new HtmlWebpackPlugin({
+			template:'./src/html/qashare.html'
+			,filename:'qashare.html'//可以使用hash命名
+			,title:'服务授权'
+			,inject:'body'//脚本包含到body 也可以写到head里面
+			,chunks:['manifest', 'vendors', 'common', 'qashare']//指定当前模板需要打入哪些js模块
 			,minify:{//启用代码代码压缩
 				removeComments:true,//移除注释
 				collapseWhitespace:true//移除空格
