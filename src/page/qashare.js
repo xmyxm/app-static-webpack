@@ -88,17 +88,22 @@ $(document).ready(function () {
 	})
 	// 
 	$videoPlayer.on('loadeddata', function(e){ 
-		// crossOrigin="anonymous" 
 		console.log('视频第一帧')
-		let scale = 0.8;
-		let canvas = document.createElement('canvas')
-		canvas.width = videoPlayer.videoWidth * scale
-		canvas.height = videoPlayer.videoHeight * scale
-		canvas.getContext('2d').drawImage(videoPlayer, 0, 0, canvas.width, canvas.height)
-		imgEle = document.createElement('img')
-		imgEle.src = canvas.toDataURL('image/png')
-		imgEle.className = 'screenshot'
-		playbtn.appendChild(imgEle)
+		try {
+			let scale = 0.8;
+			let canvas = document.createElement('canvas')
+			canvas.width = videoPlayer.videoWidth * scale
+			canvas.height = videoPlayer.videoHeight * scale
+			canvas.getContext('2d').drawImage(videoPlayer, 0, 0, canvas.width, canvas.height)
+			imgEle = document.createElement('img')
+			imgEle.setAttribute('crossOrigin','anonymous')
+			imgEle.src = canvas.toDataURL('image/png')
+			imgEle.className = 'screenshot'
+			playbtn.appendChild(imgEle)
+		} catch(err) {
+			imgEle = null
+			console.warn(err)
+		}
 	})
 	// 点击播放按钮
 	$playbtn.on('click', function(e){ 
