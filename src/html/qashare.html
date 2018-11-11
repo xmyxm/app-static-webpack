@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="x5-cache" content="enable">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-title" content="问咯">
+    <meta name="theme-color" content="#f2991b">
+    <meta property="og:title" content="问咯">
+    <meta property="og:description" content="问咯">
+    <title>Question</title>
+    <meta name="Keywords" content="QA">
+    <script type="text/javascript">
+        (function(doc, win) {
+            var fontSize,docEl = doc.documentElement,
+                resizeEvt = 'onorientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    fontSize = 10 * (clientWidth / 320);
+                    if(fontSize && fontSize <= 16){
+                        docEl.style.fontSize = fontSize + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        // autoplay
+        // http://v.weishi.qq.com/szg_9491611_1047_83a3cef3dd9d442cbd2acf476015vide.f20.mp4?dis_k=266eda537b04e8b6eb335a0d5802100c&dis_t=1540646531&guid=0508AFC000E081E13F01036CF26192E5&pver=4.6.10&fromtag=0&personid=h5&wsadapt=h5_1027212211_352617367_.203.120_34_2_2_0
+    </script>
+</head>
+	<body>
+		<div class="sharebox">
+            <div class="openapp">
+                <div class="appicon"></div>
+                <div class="describe">
+                    <div class="title oneline">A Question</div>
+                    <div class="content oneline">Please wait, give the copy later</div>
+                </div>
+                <div id="openbtn" class="openbtn">Open Now</div>
+            </div>
+            <div class="videobox">
+                <div class="playbox">
+                    <video
+                        class="videoplay"
+                        id="videoplay"
+                        webkit-playsinline="true" 
+                        playsinline="true" 
+                        x-webkit-airplay="true"
+                        src="http://v.weishi.qq.com/shg_503967627_1047_63d929ff4f684a49b573bdaa6ffavide.f20.mp4?dis_k=a479b5c33ae9489fdb7ffadc3738337e&dis_t=1540707316&guid=0508AFC000E081E13F01036CF26192E5&pver=4.6.8&fromtag=0&personid=h5&wsadapt=h5_1028141516_754380733_13.4.156_98_2_2_0"
+                        preload="auto">
+                    </video>
+                </div>
+                <div id="playbtn" class="playbtn"></div>
+                <div id="content" class="content">
+                    <img class="category" src="data:image/png;base64,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" />
+                    <div class="name">@Miranda Kerr</div>
+                    <div class="issue">What sports do you usually do to help your health? </div>
+                    <div class="detail">Detail</div>
+                </div>
+                <div id="options" class="options">
+                    <div class="user">
+                        <img class="uicon" src="http://q.qlogo.cn/qqapp/1101083114/EAA203E80061B41612A7C5F0CD434A34/100" />
+                    </div>
+                    <div class="support">
+                        <div class="sicon"></div>
+                        <div class="text">539</div>
+                    </div>
+                    <div class="reply">
+                        <div class="ricon"></div>
+                        <div class="text">reply</div>
+                    </div>
+                    <div class="forward">
+                        <div class="ficon"></div>
+                        <div class="text">Forward</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>
+

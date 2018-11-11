@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="x5-cache" content="enable">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="dns-prefetch" href="//www.dpfile.com">
+    <link rel="dns-prefetch" href="//mapi.dianping.com">
+    <link rel="Shortcut Icon" href="//www.dpfile.com/s/res/favicon.5ff777c11d7833e57e01c9d192b7e427.ico" type="image/x-icon">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-title" content="大众点评">
+    <link rel="apple-touch-icon-precomposed" href="//www.dpfile.com/m/img/app/dianping/logoforiphone.eb494fad081fe8a318aec427d5de0b43.png">
+    <link rel="apple-touch-startup-image" href="//www.dpfile.com/m/img/app/dianping/iphonesplash.88eba14b27357f754baa669bebbdd78b.png">
+    <link rel="icon" sizes="any" mask="" href="//www.dpfile.com/m/img/app/dianping/logo.svg">
+    <meta name="theme-color" content="#f2991b">
+    <meta property="og:title" content="大众点评网">
+    <meta property="og:description" content="大众点评服务授权">
+    <meta property="og:image" content="//m.dianping.com/static/img/oglogo.png">
+    <meta property="og:image:width" content="250">
+    <meta property="og:image:height" content="250">
+    <title>选择方式</title>
+    <meta name="Keywords" content="大众点评网">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            -webkit-tap-highlight-color:transparent;
+            background: #F6F6F6;
+        }
+
+        .selecttype{
+            background: #fff;
+        }
+
+        .selecttype :first-child{
+            margin-top: 10px;
+        }
+
+        .selecttype :not(:first-child){
+            background-image: linear-gradient(0,#e1e1e1,#e1e1e1 50%,transparent 50%);
+            background-position: 100% 0;
+            background-size: 100% 1px;
+            background-repeat: no-repeat;
+        }
+
+        .selecttype .link{
+            font-size: 1.5rem;
+            position: relative;
+            display: block;
+            line-height: 2.1rem;
+            color: #111;
+            letter-spacing: 0.032rem;
+            padding-top: 1.7rem;
+            padding-bottom: 1.7rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            text-decoration: none;
+        }
+
+        .icon{
+            position: absolute;
+            top: 1.4rem;
+            right: 0;
+            width: 0.8rem;
+            height: 0.8rem;
+            display: inline-block;
+            border-right: 2px solid #979797;
+            border-bottom: 2px solid #979797;
+            cursor: pointer;
+            opacity: 0.7;
+            transform: rotate(-45deg);
+        }
+
+    </style>
+    <script type="text/javascript">
+        (function(doc, win) {
+            var fontSize,docEl = doc.documentElement,
+                resizeEvt = 'onorientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    fontSize = 10 * (clientWidth / 375);
+                    if(fontSize && fontSize <= 16){
+                        docEl.style.fontSize = fontSize + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+	<body>
+		<div class="selecttype">
+            <a class="link" href="">通过旧密码方式修改<span class="icon"></span></a>
+            <a class="link" href="">通过手机号验证修改<span class="icon"></span></a>
+        </div>
+	</body>
+</html>
+

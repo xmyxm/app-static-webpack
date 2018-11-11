@@ -11,7 +11,9 @@ const devMode = f2eci.env == 'dev'
 
 module.exports = {
 	entry:{
-		mobike:['./src/page/mobike.js']
+		mobike:['./src/page/mobike.js'],
+		qashare:['./src/page/qashare.js'],
+		service:['./src/page/service.js']
 		//,common:['react','redux']
 	},
 	output:{
@@ -76,7 +78,7 @@ module.exports = {
 			{
 				test: /\.(png|jpg|jpeg|gif)$/,
 				//url-loader是对file-loader的上层封装，一般限制小图片转 base64 可以用 url-loader
-				use: [{loader: 'url-loader', options: {limit: 500, name: 'images/[name]-[hash:8].[ext]'}}]
+				use: [{loader: 'url-loader', options: {limit: 5000, name: 'images/[name]-[hash:8].[ext]'}}]
 				// 内联的base64的图片地址, 图片要小于5k, 直接的url的地址则不解析
 			},
 			{
@@ -139,6 +141,28 @@ module.exports = {
 			,title:'服务授权'
 			,inject:'body'//脚本包含到body 也可以写到head里面
 			,chunks:['manifest', 'vendors', 'common', 'mobike']//指定当前模板需要打入哪些js模块
+			,minify:{//启用代码代码压缩
+				removeComments:true,//移除注释
+				collapseWhitespace:true//移除空格
+			}
+		}),
+		new HtmlWebpackPlugin({
+			template:'./src/html/qashare.html'
+			,filename:'qashare.html'//可以使用hash命名
+			,title:'服务授权'
+			,inject:'body'//脚本包含到body 也可以写到head里面
+			,chunks:['manifest', 'vendors', 'common', 'qashare']//指定当前模板需要打入哪些js模块
+			,minify:{//启用代码代码压缩
+				removeComments:true,//移除注释
+				collapseWhitespace:true//移除空格
+			}
+		}),
+		new HtmlWebpackPlugin({
+			template:'./src/html/service.html'
+			,filename:'service.html'//可以使用hash命名
+			,title:'service'
+			,inject:'body'//脚本包含到body 也可以写到head里面
+			,chunks:['manifest', 'vendors', 'common', 'service']//指定当前模板需要打入哪些js模块
 			,minify:{//启用代码代码压缩
 				removeComments:true,//移除注释
 				collapseWhitespace:true//移除空格

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="x5-cache" content="enable">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-title" content="问咯">
+    <meta name="theme-color" content="#f2991b">
+    <meta property="og:title" content="问咯">
+    <meta property="og:description" content="问咯">
+    <title>service</title>
+    <meta name="Keywords" content="QA">
+    <script type="text/javascript">
+        (function(doc, win) {
+            var fontSize,docEl = doc.documentElement,
+                resizeEvt = 'onorientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    fontSize = 10 * (clientWidth / 320);
+                    if(fontSize && fontSize <= 16){
+                        docEl.style.fontSize = fontSize + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+	<body>
+		<div class="servicebox">
+            <div class="header">
+                <div class="userarea">
+                    <div class="usericon"></div>
+                    <div class="userinfo">
+                        <div class="name">Miranda Kerr</div>
+                        <div class="gender">Gender: Female</div>
+                        <div class="mobile">Mobile: 138-1234-5678</div>
+                    </div>
+                    <div class="arrows"></div>
+                </div>
+            </div>
+            <div class="education line">
+                <div class="title line">
+                    <div class="text">Education</div>
+                    <div class="arrows"></div>
+                </div>
+                <div class="explain">
+                    <div class="qatext">The University of A Question</div>
+                    <div class="study">2015-2018, English Language and LIterature</div>
+                </div>
+            </div>
+            <div class="skills">
+                <div class="title line">
+                    <div class="text">Skills</div>
+                    <div class="arrows"></div>
+                </div>
+                <div class="skill">
+                    <div class="sitem">Language<span class="pink">9</span></div>
+                    <div class="sitem">Computer<span class="pink">3</span></div>
+                    <div class="sitem">Cooking</div>
+                    <div class="sitem">Dancing</div>
+                    <div class="sitem">Other</div>
+                </div>
+            </div>
+            <div class="demo">
+                <div class="title line">
+                    <div class="text">1 minute skill Demo (Clip collection)</div>
+                    <div class="arrows"></div>
+                </div>
+                <div class="imgmain">
+                    <img src="https://tinypng.com/images/panda-chewing-2x.png" class="imgfile">
+                </div>
+                <div class="filearea">
+                    <span class="fileicon"></span>MyCV.pdf
+                </div>
+            </div>
+        </div>
+	</body>
+</html>
+
