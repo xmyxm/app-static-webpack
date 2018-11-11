@@ -1,0 +1,190 @@
+@import url('../base.less');
+@rem: 10rem;
+
+body{
+	background: #f5f5f5;
+}
+
+.servicebox {
+
+    .header {
+        position: relative;
+        width: 100%;
+        height: 88/@rem;
+        background: url('./icons/Service_bg@2x.png') no-repeat center;
+        background-size: 100% 100%;
+
+        .userarea {
+            position: absolute;
+            top: 40/@rem;
+            left: 15/@rem;
+            right: 15/@rem;
+            padding: 15/@rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #FFFFFF;
+            box-shadow: 0 4/@rem 20/@rem 0 rgba(0, 0, 0, 0.12);
+            border-radius: 5/@rem;
+        }
+
+        .usericon {
+            width: 65/@rem;
+            height: 65/@rem;
+            border-radius: 50%;
+            background: url('./icons/MyCosmos_photo@2x.png') no-repeat center;
+            background-size: 65/@rem 65/@rem;
+        }
+
+        .userinfo {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 0 20/@rem;
+            justify-content: space-between;
+        }
+
+        .name {
+            font-size: 19/@rem;
+            color: #212837;
+        }
+
+        .gender {
+            font-size: 12/@rem;
+            color: #B0B8CA;
+            line-height: 14/@rem;
+        }
+
+        .mobile {
+            font-size: 12/@rem;
+            color: #767E8D;
+            line-height: 15/@rem;
+        }
+
+    }
+
+    .arrows {
+        width: 6/@rem;
+        height: 65/@rem;
+        background: url('./icons/icon_into@2x.png') no-repeat center;
+        background-size: 6/@rem 12/@rem;
+    }
+
+    .education {
+        padding: 53/@rem 15/@rem 0;
+        background: #FFFFFF;
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 40/@rem;
+
+            .text {
+                font-size: 16/@rem;
+                color: #212837;
+            }
+        }
+
+        .explain {
+            padding: 8/@rem 0 10/@rem;
+
+            .qatext {
+                font-size: 14/@rem;
+                color: #212837;
+            }
+
+            .study {
+                font-size: 12/@rem;
+                color: #767E8D;
+            }
+        }
+    }
+
+    .skills {
+        margin-top: 10/@rem;
+        padding:0 15/@rem;
+        background: #fff;
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 16/@rem;
+            padding:15/@rem 0;
+
+            .text {
+                font-size: 16/@rem;
+                color: #212837;
+            }
+        }
+
+        .skill {
+            padding: 10/@rem 0 5/@rem;
+
+            .sitem {
+                background: rgba(255, 0, 102, 0.06);
+                border-radius: 4/@rem;
+                font-size: 13/@rem;
+                color: #212837;
+                padding: 5/@rem 10/@rem;
+                display: inline-block;
+                margin-right: 5/@rem;
+                margin-bottom: 5/@rem;
+            }
+
+            .pink {
+                font-size: 13/@rem;
+                color: #FF0066;
+                display: inline-block;
+                padding-left: 5/@rem;
+            }
+        }
+    }
+
+    .demo{
+    	margin-top: 10/@rem;
+    	margin-bottom: 10/@rem;
+    	background: #fff;
+		padding:0 15/@rem;
+
+    	.title{
+    		display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 16/@rem;
+            padding:15/@rem 0;
+    	}
+
+    	.imgmain{
+    		padding-top: 10/@rem;
+    	}
+
+    	.imgfile{
+    		display: block;
+    		width: 100%;
+    		height: auto;
+    	}
+
+    	.filearea{
+    		padding: 15/@rem 0;
+    	}
+
+    	.fileicon{
+    		display: inline-block;
+    		width: 14/@rem;
+    		height: 13/@rem;
+    		background: url('./icons/Service_annex@2x.png') no-repeat center;
+            background-size: 14/@rem 13/@rem;
+            margin-right:5/@rem;
+    	}
+    }
+
+    .line {
+        background-image: linear-gradient(0, #E4E8EE, #E4E8EE 50%, transparent 50%);
+        background-position: 100% 100%;
+        background-size: 100% 1px;
+        background-repeat: no-repeat;
+        background-color: #fff;
+    }
+}

@@ -1,0 +1,99 @@
+/*! 大众点评网 */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  -webkit-overflow-scrolling: touch;
+  font-size: 1.4rem;
+  font-weight: 100;
+  font-family: "PingFangSC-Regular", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", "WenQuanYi Micro Hei", sans-serif;
+}
+ol,
+li {
+  list-style-type: none;
+}
+.blogbox {
+  padding: 4.4rem 15px 15px;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+input,
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+}
+*,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+.Hide {
+  display: none;
+}
+.mobike .logo {
+  width: 100%;
+  position: relative;
+  padding-top: 36%;
+  background: url(/app/app-static-page/images/mobike-baef712d.png) no-repeat center;
+  background-size: 100%;
+}
+.mobike .userinfo {
+  margin: 44px 40px;
+}
+.mobike .userinfo .describe {
+  font-size: 16px;
+  color: #111111;
+  letter-spacing: 0.35px;
+  font-weight: bold;
+}
+.mobike .userinfo .box {
+  font-size: 13px;
+  color: #111111;
+  opacity: 0.5;
+  letter-spacing: 0.28px;
+  line-height: 23px;
+}
+.mobike .userinfo .box li {
+  position: relative;
+  padding-left: 10px;
+}
+.mobike .userinfo .box li:before {
+  position: absolute;
+  content: '';
+  background: #111111;
+  height: 4px;
+  width: 4px;
+  border-radius: 2px;
+  left: 0px;
+  top: 8px;
+}
+.mobike .btn {
+  font-size: 16px;
+  background: #FF6633;
+  line-height: 40px;
+  border-radius: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: #fff;
+  text-align: center;
+}
+.mobike .agreement .describe {
+  margin-top: 13px;
+  opacity: 0.5;
+  font-size: 13px;
+  color: #111111;
+  letter-spacing: 0.28px;
+  line-height: 21px;
+  text-align: center;
+}
+.mobike .agreement .linktext {
+  display: block;
+  font-size: 13px;
+  color: #466889;
+  letter-spacing: 0.28px;
+  text-align: center;
+  line-height: 23px;
+}
+
