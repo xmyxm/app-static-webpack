@@ -1,10 +1,9 @@
-/* eslint-disable camelcase,no-invalid-this,vars-on-top,new-cap,no-undef,no-undefined,callback-return,no-unused-vars,no-trailing-spaces */
+/* eslint-disable no-mixed-spaces-and-tabs */
+/* eslint-disable camelcase,no-invalid-this,vars-on-top,new-cap,no-undef,no-undefined,callback-return,no-unused-vars,no-trailing-spaces eslint-disable-next-line no-mixed-spaces-and-tabs */
 import $ from 'zepto'
 import '../style/yodaseed/index.less';
 
-let reqSent = false,
-	yodaData = null,
-	callBack = function(){};
+let reqSent = false, yodaData = null, callBack = function() {};
 
 function verifyParam(param) {
 	let result = {
@@ -14,7 +13,7 @@ function verifyParam(param) {
 	if (!param) {
 		result.code = 900
 		result.msg = '参数错误'
-	} else if (!(param.type && [1,2,3,4,5,6].indexOf(parseInt(param.type, 10)) > -1)) {
+	} else if (!(param.type && [1, 2, 3, 4, 5, 6].indexOf(parseInt(param.type, 10)) > -1)) {
 		// type说明：
 		// 1：找回密码
 		// 2：账号密码登录
@@ -30,7 +29,14 @@ function verifyParam(param) {
 	} else if (!param.countryCode) {
 		result.code = 903
 		result.msg = '缺少countryCode参数'
+	} else if (!param.root) {
+    	result.code = 904
+		result.msg = '缺少滑块验证码容器id'
+	} else if (!(param.callback && typeof param.callback == 'function')) {
+    	result.code = 904
+		result.msg = '缺少回调函数'
 	} else {
+    	callBack = param.callback
 		yodaData = param
 	}
 	return result
@@ -38,11 +44,8 @@ function verifyParam(param) {
 
 // 授权拿到requestCode
 function getYodaseedCode(param, callback) {
-	if(callback) {
-		callBack = callback
-	}
 	let result = verifyParam(param)
-	if(result.code != 200) {
+	if (result.code != 200) {
 		return callBack(result)
 	}
 	$.ajax({
@@ -114,17 +117,26 @@ function verifyYodaseedCode(param) {
 function showYodaseed(requestCode) {
 	var options = {
 		requestCode: requestCode,
-		root: 'root', // yoda模块 挂载到业务方的节点 id --> #root
+		root: yodaData.root, // yoda模块 挂载到业务方的节点 id --> #root
 		succCallbackFun: 'yodaseedSusCallBack', // 成功回调函数 函数名为字符串
 		failCallbackFun: 'yodaseedErrorCallBack', // 失败回调函数 函数名为字符串
-		theme: 'meituan', // 主题
+		theme: 'dianping', // 主题
 		style: { 'wrapper': 'wrapper', 'sliderTtile': 'title' }
 		// key: wrapper --> $wrapper, sliderTtile --> $sliderTtile;
 		// value: wrapper --> #root .wrapper, title --> #root .title
 	};
-	YodaSeed(options, 'test');//development
+	// pro:"https://verify.meituan.com",
+	// staging:"//verify-test.meituan.com",
+	// dev:"//verify.inf.dev.sankuai.com",
+	// test:"//verify.inf.test.sankuai.com",
+	// ppe:"//verify.inf.ppe.sankuai.com",
+	// development:"//verify-test.meituan.com"
+	YodaSeed(options, 'pro'); //development
+	// document.getElementById("root").getElementsByTagName('p')[0].innerText = '身份验证'
 	window.yodaseedSusCallBack = function(data) {
-		const param = {type: yodaData.type, requestCode: data.requestCode, responseCode : data.responseCode}
+    	var susbtn = document.getElementById('yodaBox')
+    	susbtn.className = `${susbtn.className} yodaboxsus`
+		const param = { type: yodaData.type, requestCode: data.requestCode, responseCode: data.responseCode }
 		verifyYodaseedCode(param)
 	}
 	// 系统错误 121000,
@@ -162,21 +174,24 @@ function showYodaseed(requestCode) {
 	// 目前语音服务异常，请您尝试其他登录方式 121066,
 	// 获取验证信息错误，请重试 121067
 	window.yodaseedErrorCallBack = function(data) {
-		verifyParam({code: data.code, msg: '滑块验证失败'})
+    	var susbtn = document.getElementById('yodaBox')
+    	susbtn.className = `${susbtn.className} yodaboxerror`
+		verifyParam({ code: data.code, msg: '滑块验证失败' })
 	}
 }
 
 function init() {
 	const param = {
-		'type':1,
-		'mobile':'18516505580',
-		'dpid':'',
-		'countryCode':86
+		type: 1,
+		mobile: '18516505580',
+		dpid: '',
+		countryCode: 86,
+		root: 'root',
+		callback: function(data) {
+			console.log('打印回调：' + JSON.stringify(data))
+		}
 	}
-	function callback(data){
-		console.log('打印回调：' + JSON.stringify(data))
-	}
-	getYodaseedCode(param, callback)
+	getYodaseedCode(param)
 }
 
 $(document).ready(function() {
