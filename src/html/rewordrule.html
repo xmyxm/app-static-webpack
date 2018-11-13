@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="x5-cache" content="enable">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-title" content="QA">
+    <meta name="theme-color" content="#f2991b">
+    <meta property="og:title" content="QA">
+    <meta property="og:description" content="QA">
+    <title>Reward rule</title>
+    <meta name="Keywords" content="QA">
+    <script type="text/javascript">
+    (function(doc, win) {
+        var fontSize, docEl = doc.documentElement,
+            resizeEvt = 'onorientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                fontSize = 10 * (clientWidth / 320);
+                if (fontSize && fontSize <= 16) {
+                    docEl.style.fontSize = fontSize + 'px';
+                }
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        -webkit-overflow-scrolling: touch;
+        font-size: 1.4rem;
+        font-weight: 100;
+        font-family: "PingFangSC-Regular", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", "WenQuanYi Micro Hei", sans-serif;
+    }
+
+    ol,
+    li {
+        list-style-type: none;
+    }
+
+    a,
+    a:hover {
+        text-decoration: none
+    }
+
+    input,
+    textarea {
+        resize: none;
+        -webkit-appearance: none
+    }
+
+    *,
+    a {
+        -webkit-tap-highlight-color: transparent
+    }
+
+    .content {
+        padding: 16px 20px;
+		line-height: 2.1rem;
+		font-size: 1.5rem;
+    }
+
+    .text {
+        font-size: 1.5rem;
+        color: #767E8D;
+    }
+
+    .text{
+        color: #767E8D;
+    }
+
+    .mtp20{
+    	margin-top: 1rem;
+    }
+
+    .black{
+    	color: #000;
+    }
+    .icona{
+    	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAeCAMAAAAFBf7qAAABPlBMVEUAAADpREb1Wl3lPkL6X176YV/6X17iOz/kPEHiOkH5YGDkO0HsUlLYPzT4Xl7lPET5ZGTjPUPkO0DnQUTlPULjOj/oQkXzUFLnP0PlPkP2WFj1VVb0UlT4XVz3Wlr5X17/qgDpQ0byTVDyS07xSEz/qADqREfvRkrkQkPyTlHzV1r97VTvQ0joREX7qQ79pALvUlT5wVLmQ0P90TL7uSL6sh/72EThSUTTOy7+tg71eFH4tVDybE3nTEvwRkvukkrjVEPhPkDeSD7iQT7ePzrZQDb5vSz+vBn+uxX5qRX7oQP6nQHxWVv4W1r4rVL3l1LyWVH1qE/sdU72xkz830vzskvumEruWkr61kn5w0nsikntcknqf0jsm0fmZ0XoW0X92T35yzzaPTb6xjTXPjT6xCv8vyT+xiP5oAb+rAJRecfzAAAAEnRSTlMAdnZ2zv3u7s3NgoJ2dkRELi6rJbGaAAABXUlEQVQoz3XLhXKDQBCA4a27AaFQvaRBQoC4u1vd3fX9X6DL0YbJJHzDDLv3z8Lq5NTusOl5AJjcHm0Z4GBntHGADReYNl1g2nKBad0FJt+/46NI5DAb8AXww9W62rNlXzq9nvmRC/ztmDQ/lX/rSmYiJLVy9h5YBChoRaWoKDffUiIYTIZILK8g3/4SgJrS/Lp+1SRSvJkImiRzout6OJyeADDURljbu4sTInWT5yFCIkpYq6ZrYwCyHK2/p04/McWDHYn8RAqNdD1q0CTz0Uo1hslM4FH74bWmGrJsJa9X9hrqRca6Cknk+SlqeJGdEF++xmZKJFbi6YN1xdvU8lms1f5K3qosT2HCieVZlhUrj6XL+xQWJ/WJyNkGkoDfQKIPgmC/OrNgJZsoiBQOdBYmADiHyNGKP5yt5AITw3EMx1A4IHunyQUmzj3NevoYD+NYAVibYzzDZhYAfgGxkVr0/rs78gAAAABJRU5ErkJggg==') center no-repeat;
+    }
+    .iconb{
+    	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAeCAMAAAAFBf7qAAABLFBMVEUAAAD4YF/3YV73YF72Xl3yVVbvTlDmP0XqRkr6ZGL4YF77ZmP2YF32X133YF73YF7kO0H3X133X176ZWPlPkL3X1/6ZGP4X1/5ZGLyU1bzVVXzVFj////6Y2HmP0T8aWXiO0D7aGTiOkD6Y2LmQETlPkPkPULkPEH6Y2DmQUb9ambkO0HkOkD4YF3lPETyVlbzWFjmP0T4Yl/1WlnnQUX6ZWL2XVvoQ0fuT1DrSkztTU/wUVLpRUnjO0DkPULqRkrwU1TrSEv8aGT5Y2HsTE797VT3qVL5wFP2kFPxg07951T701P6ylPvWVHuVFDsYEvzaFf0f1b841T83VT2mlT1h1TxYVT83lP5wlPyb1PxZlP2sVD0m1D0mlDwcFDzjk/tVU7uaEzqVEnoSkl6BtPtAAAAL3RSTlMA9+ridnZ2dXZ1/s7Nrn0//bm0r69yYkdDLicdAfLy7u7W1tPTzs7NmpqCgmBKRJBzLK4AAAFSSURBVCjPddLpTsJAFIbhI6CIoCAgAu77rsAM0AKtQJmyg/u+e//34JkpnaYxfTJJz5c3/AMy4aawBULKWhvHeIeLQrOZFSnRLFrSAJPLKIZXAFZDeFhCAIa0ljjcMQpGQTAwFTxg8k355/xTvn+fAEAgno4szy8E4lH+WVqMRs7EJwVQ8oC/IoSUSAkfceEpR0iO5AQ8kLUJTx6mAS4cHfPKGe7UZteuVLc9DFiP3cuJqWq7Y8/1dl9OTIqiVJUqvg7rjIYvOCwzIlWUCr7RE7sxhzhlqjg+zN5ADkxqS1Bb3XdVfWNfuAWebF1mfvZv5cTUkLqPrD3mh9pQ1cYswKXjlX3Lu4ap5vgZ/zoDU9kDJkppmZbxUZdyECBPaZ7mBTyQtSlP0nryaNdZPOkTe/wvGtRtmPY1SywLXFLXNF3Tde0cIHMQE2kbhFNN2DwB+AMeg5BZfneLfgAAAABJRU5ErkJggg==') center no-repeat;
+    }
+    .icona, .iconb{
+    	display: inline-block;
+    	width: 1.3rem;
+    	height: 1.5rem;
+    	background-size: 1.3rem 1.5;
+    	margin-right: .3rem;
+    }
+	.pink{
+		color: #ff096a;
+	}
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <p class="text">Hello World,</p>
+        <p class="text mtp20">Videos under this “Money” Section is open for all users to make money or receive discount coupons for purchasing various nice things.</p>
+        <p class="black">Some videos are marked with <i class="icona"></i>, this means when you watch these videos <span class="pink">you will be rewarded with cash incentives</span>;</p>
+        <p class="black">Some videos are marked with <i class="iconb"></i>, this means when you watch these videos <span class="pink">you will be rewarded with coupons</span>.</p>
+        <p class="black">Some videos are marked with both, this means when you watch theses videos <span class="pink">you will be rewarded with both</span>.</p>
+        <p class="text">Have fun!</p>
+        <p class="text mtp20">Your Allblo Team</p>
+    </div>
+</body>
+</html>

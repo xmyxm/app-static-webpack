@@ -120,24 +120,77 @@ body{
         }
 
         .skill {
-            padding: 10/@rem 0 5/@rem;
 
-            .sitem {
-                background: rgba(255, 0, 102, 0.06);
-                border-radius: 4/@rem;
-                font-size: 13/@rem;
-                color: #212837;
-                padding: 5/@rem 10/@rem;
-                display: inline-block;
-                margin-right: 5/@rem;
-                margin-bottom: 5/@rem;
-            }
+            // .sitem {
+            //     background: rgba(255, 0, 102, 0.06);
+            //     border-radius: 4/@rem;
+            //     font-size: 13/@rem;
+            //     color: #212837;
+            //     padding: 5/@rem 10/@rem;
+            //     display: inline-block;
+            //     margin-right: 5/@rem;
+            //     margin-bottom: 5/@rem;
+            // }
 
-            .pink {
-                font-size: 13/@rem;
-                color: #FF0066;
-                display: inline-block;
-                padding-left: 5/@rem;
+            // .pink {
+            //     font-size: 13/@rem;
+            //     color: #FF0066;
+            //     display: inline-block;
+            //     padding-left: 5/@rem;
+            // }
+
+            .sitem{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12/@rem 0;
+
+                .catgory{
+                    font-size: 14/@rem;
+                    color: #212837;
+                    white-space: nowrap;
+                    margin-right: 10/@rem;
+                }
+
+                .catytxt{
+                    display: inline-block;
+                    margin-right: 3/@rem;
+                }
+
+                .gradea{
+                    background: url('./icons/Service_skills1@2x.png') no-repeat center;
+                }
+
+                .gradeb{
+                    background: url('./icons/Service_skills2@2x.png') no-repeat center;
+                }
+
+                .gradea,.gradeb{
+                    margin-left: 3/@rem;
+                    vertical-align: middle;
+                    display: inline-block;
+                    width: 13/@rem;
+                    height: 10/@rem;
+                    background-size: 13/@rem 10/@rem;
+                }
+
+                .declare{
+                    position: relative;
+                    flex: 1;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    text-align: right;
+                    font-size: 12/@rem;
+                    color: #767E8D;
+                }
+
+                .decbox{
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                }
             }
         }
     }
@@ -186,5 +239,12 @@ body{
         background-size: 100% 1px;
         background-repeat: no-repeat;
         background-color: #fff;
+    }
+
+    .ellipsis{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 }

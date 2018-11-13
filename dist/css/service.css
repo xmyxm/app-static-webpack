@@ -143,24 +143,58 @@ body {
   font-size: 1.6rem;
   color: #212837;
 }
-.servicebox .skills .skill {
-  padding: 1rem 0 0.5rem;
-}
 .servicebox .skills .skill .sitem {
-  background: rgba(255, 0, 102, 0.06);
-  border-radius: 0.4rem;
-  font-size: 1.3rem;
-  color: #212837;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 1.2rem 0;
 }
-.servicebox .skills .skill .pink {
-  font-size: 1.3rem;
-  color: #FF0066;
+.servicebox .skills .skill .sitem .catgory {
+  font-size: 1.4rem;
+  color: #212837;
+  white-space: nowrap;
+  margin-right: 1rem;
+}
+.servicebox .skills .skill .sitem .catytxt {
   display: inline-block;
-  padding-left: 0.5rem;
+  margin-right: 0.3rem;
+}
+.servicebox .skills .skill .sitem .gradea {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAUCAMAAACknt2MAAAAsVBMVEUAAAD/AGj/C4D/Fpf/BW//BG//AWn+EZD/DYP9Fpr/CXr/AWn9FZr+E5L/CXr/CHv/B3T/EYv+Doj/BXT/A27/BG//B3f+F5r/D4r/DYH/B3L/C3f/Fob/OY7/AGf/DYT/DIH/BnL+DYf/CXz/C37/DID/DYT/BnT8GJ3/DIb/BWv/BHD/Am3/AWr9EY//B3f+Don+DYb+DIP+C4D+CX3/BXL9E5X9D4v+CHv+BnX9CHqoxmZZAAAAK3RSTlMA+zIxMVD77Vj+7u3sWFhRSDHu7u7m0FhYUSIVCwTv7u7b1MK4raKIVlI3GboFJwAAALtJREFUKM91yYcOgkAQRdHBAiIqKIqiYu9tpSnw/x/m7KywMeBNJpmXA4qqKHhNyLss+FaNBtxFBTUM2ihwE+U0HdEcosBV1MyFFglYlnWM41jQbB3zbBRRj6WpSeLgx1K7BpIY4zR3GK+NUlCSJCbKNsMnQ5G1oihywdtFPBJJYRi63j7krUgkBUFwPgS8pRBJvu9vfN6gD79Nnt8KkfQWaSWB7oPS6lBNJGV6YZUCY5QOSZl0/Y/AqVo+XRoflswZgygAAAAASUVORK5CYII=) no-repeat center;
+}
+.servicebox .skills .skill .sitem .gradeb {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAUCAMAAACknt2MAAAA0lBMVEUAAAD9hjz/lj3/qjj/0jT8iDv/ljv/qDn/vjb+pTj8oDj/uzf/rjf/xzT/1TL+mTv/uUf+tzb/xTX8jzr/1jL9ljr+ozj/mTz/okX/1zL9lDr9mzn8lzn/sjf+rjf+vTX/yjT/zzP9mzn+tjb+qTf+rjf9sjf9mDr/sTj8izz/iD3/hjz/iDz/iz3/lDz8ijr8kzn/xDP9nDj8lzj+sTb9qDb+tTX7jjn9rTb8oDj+ujX8jzr9pDf8pDf+vTT/yzP9vTT/zzL9oDj9uTT/0zH8rDb5cy7TAAAAL3RSTlMA+zIyMe1RUTHuWFhYWFdIBu7t7OzfxxsQ++7u7u7u7e3t1NS4raKIUlFPNy8uJgJXHjgAAADNSURBVCjPbcnlFoJAEIbhMRAb7O5upUMQjPu/JXcHOBxl3z873z6QCtpD1IHDD+4Il6BdJCcON5cG0G1d1207F8q5gbtBBK5BIXVauPpUQBCEjSzLuVBk2pAKVpQkCak7l2gDlIDMp8lTaZsmOQsZiOl+dwiJbcchF0pUWVVVHsSlSkOJyTAMXlwZH/KOUWJSFGW7VmgjlLiSpmkLjVbLwx9ZpNfLslB+yfNcz3XdSUKgcsPqKCyqZ4FBD9KUJVD1fX+GkqT3u4nCoB5TvvrSIuZfLXIYAAAAAElFTkSuQmCC) no-repeat center;
+}
+.servicebox .skills .skill .sitem .gradea,
+.servicebox .skills .skill .sitem .gradeb {
+  margin-left: 0.3rem;
+  vertical-align: middle;
+  display: inline-block;
+  width: 1.3rem;
+  height: 1rem;
+  background-size: 1.3rem 1rem;
+}
+.servicebox .skills .skill .sitem .declare {
+  position: relative;
+  -ms-flex: 1;
+      flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+  font-size: 1.2rem;
+  color: #767E8D;
+}
+.servicebox .skills .skill .sitem .decbox {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-direction: column;
+      flex-direction: column;
 }
 .servicebox .demo {
   margin-top: 1rem;
@@ -203,5 +237,10 @@ body {
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-color: #fff;
+}
+.servicebox .ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
