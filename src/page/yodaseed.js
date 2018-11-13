@@ -131,11 +131,13 @@ function showYodaseed(requestCode) {
 	// test:"//verify.inf.test.sankuai.com",
 	// ppe:"//verify.inf.ppe.sankuai.com",
 	// development:"//verify-test.meituan.com"
-	YodaSeed(options, 'pro'); //development
+	YodaSeed(options, 'test'); //development
 	// document.getElementById("root").getElementsByTagName('p')[0].innerText = '身份验证'
 	window.yodaseedSusCallBack = function(data) {
     	var susbtn = document.getElementById('yodaBox')
-    	susbtn.className = `${susbtn.className} yodaboxsus`
+    	if (susbtn) {
+			susbtn.className = `${susbtn.className} yodaboxsus`
+		}
 		const param = { type: yodaData.type, requestCode: data.requestCode, responseCode: data.responseCode }
 		verifyYodaseedCode(param)
 	}
@@ -175,7 +177,13 @@ function showYodaseed(requestCode) {
 	// 获取验证信息错误，请重试 121067
 	window.yodaseedErrorCallBack = function(data) {
     	var susbtn = document.getElementById('yodaBox')
-    	susbtn.className = `${susbtn.className} yodaboxerror`
+    	if (susbtn) {
+			susbtn.className = `${susbtn.className} yodaboxerror`
+		}
+    	var moveingBar = document.getElementById('yodaMoveingBar')
+    	if (moveingBar) {
+			moveingBar.className = `${moveingBar.className} yodamoveingbarerror`
+		}
 		verifyParam({ code: data.code, msg: '滑块验证失败' })
 	}
 }
