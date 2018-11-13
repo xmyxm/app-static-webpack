@@ -47,11 +47,11 @@ function getYodaseedCode(param, callback) {
 	}
 	$.ajax({
 		type: 'POST',
-		url: 'http://w.51ping.com/ajax/json/account/slideBlockAuth',
+		url: '/ajax/json/account/slideBlockAuth',
 		data: param,
 		dataType: 'json',
 		success: function(data) {
-			if (data.code == 200) {
+			if (data.requestCode) {
 				yodaData.requestCode = data.requestCode
 				showYodaseed(data.requestCode)
 			} else {
@@ -122,7 +122,7 @@ function showYodaseed(requestCode) {
 		// key: wrapper --> $wrapper, sliderTtile --> $sliderTtile;
 		// value: wrapper --> #root .wrapper, title --> #root .title
 	};
-	YodaSeed(options, 'development');
+	YodaSeed(options, 'test');//development
 	window.yodaseedSusCallBack = function(data) {
 		const param = {type: yodaData.type, requestCode: data.requestCode, responseCode : data.responseCode}
 		verifyYodaseedCode(param)
