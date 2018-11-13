@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="x5-cache" content="enable">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-title" content="大众点评">
+    <meta name="theme-color" content="#f2991b">
+    <meta property="og:title" content="大众点评">
+    <meta property="og:description" content="大众点评">
+    <title>滑块适配方案</title>
+    <meta name="Keywords" content="QA">
+    <script type="text/javascript">
+    (function(doc, win) {
+        var fontSize, docEl = doc.documentElement,
+            resizeEvt = 'onorientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                fontSize = 10 * (clientWidth / 320);
+                if (fontSize && fontSize <= 16) {
+                    docEl.style.fontSize = fontSize + 'px';
+                }
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+    <script type="text/javascript" src="https://s0.meituan.net/mxx/yoda/yoda.seed.js"></script>
+</head>
+
+<body>
+    <div class="seedbox">
+    </div>
+    <div id="root" class=""></div>
+</body>
+
+</html>

@@ -9,7 +9,7 @@
     "build": "gulp",
     "eslint": "eslint --ext .js src"
   },
-  "pre-commit": [
+  "pre-commit": [ 
     "eslint"
   ],
   "repository": {
