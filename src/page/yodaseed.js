@@ -3,7 +3,13 @@
 import $ from 'zepto'
 import '../style/yodaseed/index.less';
 
-let reqSent = false, yodaData = null, callBack = function() {};
+const env = {
+	domain: '',
+	val: 'test'
+}
+let reqSent = false,
+	yodaData = null,
+	callBack = function() {};
 
 function verifyParam(param) {
 	let result = {
@@ -13,8 +19,8 @@ function verifyParam(param) {
 	if (!param) {
 		result.code = 900
 		result.msg = '参数错误'
-	} else if (!(param.type && [1, 2, 3, 4, 5, 6].indexOf(parseInt(param.type, 10)) > -1)) {
-		// type说明：
+	} else if (!(param.captchaSource && [1, 2, 3, 4, 5, 6].indexOf(parseInt(param.captchaSource, 10)) > -1)) {
+		// captchaSource说明：
 		// 1：找回密码
 		// 2：账号密码登录
 		// 3：手机号快捷登录
@@ -22,21 +28,22 @@ function verifyParam(param) {
 		// 5：修改密码
 		// 6：换绑手机（验证新手机）
 		result.code = 901
-		result.msg = '无效type参数，有效范围>=1 & <=6'
+		result.msg = '无效captchaSource参数，有效范围>=1 & <=6'
 	} else if (!param.mobile) {
 		result.code = 902
 		result.msg = '缺少mobile参数'
 	} else if (!param.countryCode) {
 		result.code = 903
 		result.msg = '缺少countryCode参数'
-	} else if (!param.root) {
-    	result.code = 904
-		result.msg = '缺少滑块验证码容器id'
+	} else if (!(param.platform && ['pc', 'm'].indexOf(param.platform) > -1)) {
+		result.code = 904
+		result.msg = '缺少有效的platform值(pc|m)'
 	} else if (!(param.callback && typeof param.callback == 'function')) {
-    	result.code = 904
+		result.code = 904
 		result.msg = '缺少回调函数'
 	} else {
-    	callBack = param.callback
+		callBack = param.callback
+		param.className = param.className || ''
 		yodaData = param
 	}
 	return result
@@ -115,13 +122,42 @@ function verifyYodaseedCode(param) {
 
 // 请求业务方后端获取requestCode参数
 function showYodaseed(requestCode) {
+	var rootId = yodaData.root || 'root'
+	var className = ''
+	if (yodaData.platform == 'pc') {
+    	var container = document.getElementById(rootId)
+		container.className = `root-pc ${container.className} ${yodaData.className}`
+	} else {
+		className = 'root-m ' + yodaData.className
+		var rootbox = document.createElement('div')
+		rootbox.id = rootId
+		rootbox.className = className
+		document.body.appendChild(rootbox)
+		rootbox.onclick = function(e) {
+			if (e.target == this) {
+				document.body.removeChild(rootbox)
+			}
+		}
+	}
+
+	var mainTitle
 	var options = {
 		requestCode: requestCode,
-		root: yodaData.root, // yoda模块 挂载到业务方的节点 id --> #root
+		root: rootId, // yoda模块 挂载到业务方的节点 id --> #root
 		succCallbackFun: 'yodaseedSusCallBack', // 成功回调函数 函数名为字符串
 		failCallbackFun: 'yodaseedErrorCallBack', // 失败回调函数 函数名为字符串
 		theme: 'dianping', // 主题
-		style: { 'wrapper': 'wrapper', 'sliderTtile': 'title' }
+		style: { 'wrapper': 'wrapper', 'sliderTtile': 'titleaaaa' },
+		mounted: function() {
+			if (yodaData.platform == 'm') {
+				var titEle = rootbox.getElementsByTagName('p')
+				if (titEle && titEle.length) {
+					mainTitle = titEle[0]
+					mainTitle.innerText = '身份验证'
+					mainTitle.className = `${mainTitle.className} starttitle`
+				}
+			}
+		}
 		// key: wrapper --> $wrapper, sliderTtile --> $sliderTtile;
 		// value: wrapper --> #root .wrapper, title --> #root .title
 	};
@@ -131,14 +167,15 @@ function showYodaseed(requestCode) {
 	// test:"//verify.inf.test.sankuai.com",
 	// ppe:"//verify.inf.ppe.sankuai.com",
 	// development:"//verify-test.meituan.com"
-	YodaSeed(options, 'test'); //development
+	YodaSeed(options, env.val); //development
 	// document.getElementById("root").getElementsByTagName('p')[0].innerText = '身份验证'
 	window.yodaseedSusCallBack = function(data) {
-    	var susbtn = document.getElementById('yodaBox')
-    	if (susbtn) {
-			susbtn.className = `${susbtn.className} yodaboxsus`
+		if (yodaData.platform == 'm') {
+			if (mainTitle) {
+				mainTitle.className = `${mainTitle.className.replace(/starttitle|errortitle/g, '')} sustitle`
+			}
 		}
-		const param = { type: yodaData.type, requestCode: data.requestCode, responseCode: data.responseCode }
+		const param = { captchaSource: yodaData.captchaSource, requestCode: data.requestCode, responseCode: data.responseCode }
 		verifyYodaseedCode(param)
 	}
 	// 系统错误 121000,
@@ -176,30 +213,42 @@ function showYodaseed(requestCode) {
 	// 目前语音服务异常，请您尝试其他登录方式 121066,
 	// 获取验证信息错误，请重试 121067
 	window.yodaseedErrorCallBack = function(data) {
-    	var susbtn = document.getElementById('yodaBox')
-    	if (susbtn) {
-			susbtn.className = `${susbtn.className} yodaboxerror`
-		}
-    	var moveingBar = document.getElementById('yodaMoveingBar')
-    	if (moveingBar) {
-			moveingBar.className = `${moveingBar.className} yodamoveingbarerror`
+		if (yodaData.platform == 'm') {
+			if (mainTitle) {
+				mainTitle.className = `${mainTitle.className.replace(/starttitle|sustitle/g, '')} errortitle`
+			}
 		}
 		verifyParam({ code: data.code, msg: '滑块验证失败' })
 	}
 }
 
 function init() {
-	const param = {
-		type: 1,
+	const mData = {
+		captchaSource: 1,
 		mobile: '18516505580',
 		dpid: '',
 		countryCode: 86,
-		root: 'root',
+		root: 'root-m',
+		className: '',
+		platform: 'm',
 		callback: function(data) {
 			console.log('打印回调：' + JSON.stringify(data))
 		}
 	}
-	getYodaseedCode(param)
+	const pcData = {
+		captchaSource: 1,
+		mobile: '18516505580',
+		dpid: '',
+		countryCode: 86,
+		root: 'root-pc',
+		className: '',
+		platform: 'pc',
+		callback: function(data) {
+			console.log('打印回调：' + JSON.stringify(data))
+		}
+	}
+
+	getYodaseedCode(pcData)
 }
 
 $(document).ready(function() {
