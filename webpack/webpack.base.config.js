@@ -14,8 +14,7 @@ module.exports = {
 		mobike: ['./src/page/mobike.js'],
 		qashare: ['./src/page/qashare.js'],
 		service: ['./src/page/service.js'],
-		yodaseed: ['./src/page/yodaseed.js'],
-		yodaseedpc: ['./src/page/yodaseedpc.js']
+		yodaseed: ['./src/page/yodaseed.js']
 		//,common:['react','redux']
 	},
 	output: {
@@ -181,24 +180,10 @@ module.exports = {
 			template: './src/html/yodaseed.html',
 			filename: 'yodaseed.html' //可以使用hash命名
 			,
-			title: 'M站滑块验证',
+			title: '滑块验证',
 			inject: 'body' //脚本包含到body 也可以写到head里面
 			,
 			chunks: ['manifest', 'vendors', 'common', 'yodaseed'] //指定当前模板需要打入哪些js模块
-			,
-			minify: { //启用代码代码压缩
-				removeComments: true, //移除注释
-				collapseWhitespace: true //移除空格
-			}
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/html/yodaseedpc.html',
-			filename: 'yodaseedpc.html' //可以使用hash命名
-			,
-			title: 'PC站滑块验证',
-			inject: 'body' //脚本包含到body 也可以写到head里面
-			,
-			chunks: ['manifest', 'vendors', 'common', 'yodaseedpc'] //指定当前模板需要打入哪些js模块
 			,
 			minify: { //启用代码代码压缩
 				removeComments: true, //移除注释
