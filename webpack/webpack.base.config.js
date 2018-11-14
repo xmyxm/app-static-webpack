@@ -229,6 +229,8 @@ module.exports = {
 		}
 	}
 }
+
+
 //img处理
 //url-loader 可以根据自定义文件大小或者转化为 base64 格式的 dataUrl, 或者单独作为文件, 也可以自定义对应的hash 文件名
 //file-loader 默认情况下会根据图片生成对应的 MD5hash 的文件格式

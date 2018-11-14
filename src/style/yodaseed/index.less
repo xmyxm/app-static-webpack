@@ -1,6 +1,6 @@
 @import url('../base.less');
 
-.seedbox {
+body{
     position: fixed;
     top: 0;
     bottom: 0;
@@ -8,6 +8,16 @@
     right: 0;
     background: url('https://tinypng.com/images/panda-chewing-2x.png') center no-repeat;
     background-size: 100% auto;
+}
+
+.seedbox {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
 }
 
 // #root{
@@ -40,19 +50,15 @@
 
 
 #root {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 100;
 }
 
 //滑块验证码样式
 #root [class*=_slider__wrapper] {
     background: #FFFFFF;
-    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     height: auto;
 
     &:after {
@@ -79,6 +85,8 @@
     #yodaBox {
         background: url('./icons/codeslide@1.5x.png') center no-repeat;
         background-size: 33px 33px !important;
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.12);
+        border-radius: 5px;
 		height: 33px;
 		width: 33px;
 		left: 0px;
@@ -96,25 +104,25 @@
 }
 
 #root [class*=_slider__sliderTitle] {
-    font-size: 21px;
-    color: #111111;
-    font-weight: 400;
-    padding: 25px 0;
-    margin: 0 auto;
+    display: none;
+    // font-size: 21px;
+    // color: #111111;
+    // font-weight: 400;
+    // padding: 25px 0;
+    // margin: 0 auto;
 
-    &:after {
-        content: '请向右滑动滑块验证';
-        position: absolute;
-        top: 54px;
-        left: 50%;
-        font-size: 14px;
-        color: #777777;
-        transform: translateX(-50%);
-    }
+    // &:after {
+    //     content: '请向右滑动滑块验证';
+    //     position: absolute;
+    //     top: 54px;
+    //     left: 50%;
+    //     font-size: 14px;
+    //     color: #777777;
+    //     transform: translateX(-50%);
+    // }
 }
 
 #root [class*=_slider__boxWrapper] {
-    border-radius: 5px;
     width: 220px;
     margin: 30px auto 40px;
 	border: none;
