@@ -1,8 +1,7 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
-const DashboardPlugin = require('webpack-dashboard/plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const path = require('path')
 
 const f2eci = require('../f2eci')
 //const STATIC_SRC = f2eci['static-src']
@@ -23,7 +22,7 @@ module.exports = {
 		,
 		filename: 'js/[name].js',
 		chunkFilename: 'js/[name].js',
-		publicPath: '/app/app-static-page/',
+		publicPath: '/app/app-static-webpack/',
 		crossOriginLoading: 'anonymous' //script 标签加上跨域错误捕获权限
 	},
 	module: {
@@ -133,7 +132,6 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].css'
 		}),
-		new DashboardPlugin(),
 		new HtmlWebpackPlugin({
 			template: './src/html/mobike.html',
 			filename: 'mobike.html' //可以使用hash命名

@@ -248,7 +248,7 @@ function init() {
 		}
 	}
 
-	getYodaseedCode(mData)
+	getYodaseedCode(pcData)
 }
 
 $(document).ready(function() {

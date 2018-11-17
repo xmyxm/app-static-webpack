@@ -36,7 +36,7 @@ a {
   width: 100%;
   position: relative;
   padding-top: 36%;
-  background: url(/app/app-static-page/images/mobike-baef712d.png) no-repeat center;
+  background: url(/app/app-static-webpack/images/mobike-baef712d.png) no-repeat center;
   background-size: 100%;
 }
 .mobike .userinfo {
