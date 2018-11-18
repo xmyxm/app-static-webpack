@@ -12,7 +12,7 @@ module.exports = {
 	entry: {
 		mobike: ['./src/page/mobike.js'],
 		qashare: ['./src/page/qashare.js'],
-		service: ['./src/page/service.js'],
+		resume: ['./src/page/resume.js'],
 		yodaseed: ['./src/page/yodaseed.js']
 		//,common:['react','redux']
 	},
@@ -161,13 +161,13 @@ module.exports = {
 			}
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/html/service.html',
-			filename: 'service.html' //可以使用hash命名
+			template: './src/html/resume.html',
+			filename: 'resume.html' //可以使用hash命名
 			,
-			title: 'service',
+			title: 'resume',
 			inject: 'body' //脚本包含到body 也可以写到head里面
 			,
-			chunks: ['manifest', 'vendors', 'common', 'service'] //指定当前模板需要打入哪些js模块
+			chunks: ['manifest', 'vendors', 'common', 'resume'] //指定当前模板需要打入哪些js模块
 			,
 			minify: { //启用代码代码压缩
 				removeComments: true, //移除注释
