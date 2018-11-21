@@ -9,7 +9,7 @@
     "build": "gulp",
     "eslint": "eslint --ext .js src"
   },
-  "pre-commit": [ 
+  "pre-commit": [
     "eslint"
   ],
   "repository": {
@@ -17,6 +17,7 @@
     "url": "ssh://git@git.dianpingoa.com/f2e/app-static-page.git"
   },
   "dependencies": {
+    "clipboard": "^2.0.4",
     "zepto": "^1.2.0"
   },
   "devDependencies": {

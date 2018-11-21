@@ -13,7 +13,8 @@ module.exports = {
 		mobike: ['./src/page/mobike.js'],
 		qashare: ['./src/page/qashare.js'],
 		resume: ['./src/page/resume.js'],
-		yodaseed: ['./src/page/yodaseed.js']
+		yodaseed: ['./src/page/yodaseed.js'],
+		aboutapp: ['./src/page/aboutapp.js']
 		//,common:['react','redux']
 	},
 	output: {
@@ -187,6 +188,20 @@ module.exports = {
 				removeComments: true, //移除注释
 				collapseWhitespace: true //移除空格
 			}
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/html/aboutapp.html',
+			filename: 'aboutapp.html' //可以使用hash命名
+			,
+			title: 'About this App',
+			inject: 'body' //脚本包含到body 也可以写到head里面
+			,
+			chunks: ['manifest', 'vendors', 'common', 'aboutapp'] //指定当前模板需要打入哪些js模块
+			,
+			minify: { //启用代码代码压缩
+				removeComments: true, //移除注释
+				collapseWhitespace: false //移除空格
+			}
 		})
 		// 允许你创建一个在编译时可以配置的全局常量，只能在被打包的文件中读取到这个全局变量
 		// new webpack.DefinePlugin({
@@ -214,10 +229,10 @@ module.exports = {
 		inline: true, //应用程序启用内联模式,默认内联模式,当源文件改变时会自动刷新页面
 		hot: true, //启用 webpack 的模块热替换特性
 		//host:'localhost',//指定使用一个 host。默认是 localhost。如果你希望服务器外部可访问，指定为ip
-		host:'m.51ping.com',
+		host: '127.0.0.1',//'m.51ping.com',
 		stats: { colors: true }, // 用颜色标识
 		//port: 9000,
-		port: 80, // 如果是小于1000的端口号，是需要sudo权限的，启用方式 sudo node server.js即可(可使用默认80端口)
+		port: 8080, // 如果是小于1000的端口号，是需要sudo权限的，启用方式 sudo node server.js即可(可使用默认80端口)
 		proxy: {
 			'/ajax/json/account/*': {
 				target: 'http://w.51ping.com',
