@@ -17,6 +17,7 @@
     "url": "ssh://git@git.dianpingoa.com/f2e/app-static-page.git"
   },
   "dependencies": {
+    "@dp/account-yoda": "file:../../work/account-yoda",
     "clipboard": "^2.0.4",
     "zepto": "^1.2.0"
   },

@@ -26,7 +26,8 @@ server.listen(port, host, (err)=>{
 	if(err){
 		console.log('启动出错：' + err);
 	}
-	open('http://' + host + ':' + port + '/resume.html');
+	//open('http://' + host + ':' + port + '/resume.html');
 	//open('http://' + host + ':' + port + '/yodaseed.html');
+	open('http://' + host + ':' + port + '/aboutapp.html');
 });
 

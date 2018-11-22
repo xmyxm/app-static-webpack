@@ -91,10 +91,10 @@ body {
   line-height: 1.5rem;
 }
 .servicebox .arrows {
-  width: 0.6rem;
+  width: 0.8rem;
   height: 6.5rem;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcBAMAAACaHyIpAAAAFVBMVEUAAACwuMqyusuwucuyusyxucqzusxi9AH/AAAAB3RSTlMA/lfjUORIGqy+xgAAADdJREFUCNdjSDZhgABDQQUYQwjCcBSECjEJwoQUqSEkAhMShTPgUnDFMO3kCCAcj/AOwoNwLwMAp7kJZ0jWJfIAAAAASUVORK5CYII=) no-repeat center;
-  background-size: 0.6rem 1.2rem;
+  background-size: 0.8rem 1.4rem;
 }
 .servicebox .education {
   padding: 5.3rem 1.5rem 0;

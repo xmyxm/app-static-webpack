@@ -1,60 +1,16 @@
 /*! 大众点评网 */
-* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  -webkit-overflow-scrolling: touch;
-  font-size: 1.4rem;
-  font-weight: 100;
-  font-family: "PingFangSC-Regular", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", "WenQuanYi Micro Hei", sans-serif;
-}
-ol,
-li {
-  list-style-type: none;
-}
-.blogbox {
-  padding: 4.4rem 15px 15px;
-}
-a,
-a:hover {
-  text-decoration: none;
-}
-input,
-textarea {
-  resize: none;
-  -webkit-appearance: none;
-}
-*,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-.Hide {
-  display: none;
-}
-body {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: url('https://tinypng.com/images/panda-chewing-2x.png') center no-repeat;
-  background-size: 100% auto;
-}
-.pcbox {
-  width: 280px;
-  margin: 20px auto;
-}
 /***************公共样式 begin****************/
 .root-m [class*=_slider__moveingBar],
 .root-pc [class*=_slider__moveingBar] {
   border-radius: 5px !important;
+  background-image: -webkit-linear-gradient(right, #FF6633 0%, #FF9F62 86%) !important;
   background-image: linear-gradient(-90deg, #FF6633 0%, #FF9F62 86%) !important;
   background-size: 100% 100% !important;
 }
 .root-m [class*=_slider__moveingBarError],
 .root-pc [class*=_slider__moveingBarError] {
   border-radius: 5px !important;
+  background-image: -webkit-linear-gradient(right, #FF3030 0%, #E12E2E 86%) !important;
   background-image: linear-gradient(-90deg, #FF3030 0%, #E12E2E 86%) !important;
   background-size: 100% 100% !important;
 }
@@ -119,6 +75,11 @@ body {
   height: 26px !important;
   background-size: 26px 26px !important;
 }
+.root-pc [class*=_slider__imgWrapper] {
+  position: relative !important;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+}
 .root-m {
   position: fixed;
   top: 0;
@@ -132,6 +93,7 @@ body {
   background: #FFFFFF;
   border-radius: 20px;
   height: auto;
+  width: 280px !important;
 }
 .root-m [class*=_slider__wrapper]:after {
   content: '';
@@ -145,6 +107,7 @@ body {
   pointer-events: none;
 }
 .root-m [class*=_slider__wrapper] #yodaMoveingBar {
+  background-image: -webkit-linear-gradient(right, #FF6633 0%, #FF9F62 86%);
   background-image: linear-gradient(-90deg, #FF6633 0%, #FF9F62 86%);
   background-size: 100% 100% !important;
 }
@@ -154,11 +117,15 @@ body {
 }
 .root-m [class*=_slider__boxStatic],
 .root-m [class*=_slider__boxOk],
-.root-m [class*=_slider__boxLoading],
 .root-m [class*=_slider__boxError] {
   width: 35px !important;
   height: 35px !important;
   background-size: 35px 35px !important;
+}
+.root-m [class*=_slider__boxLoading] {
+  width: 35px !important;
+  height: 35px !important;
+  background-size: 22px 22px !important;
 }
 .root-m [class*=_slider__sliderTitle] {
   font-size: 21px;
@@ -210,8 +177,8 @@ body {
           transform: translateX(-50%);
 }
 .root-m [class*=_slider__boxWrapper] {
-  width: 220px;
-  margin: 30px auto 40px;
+  width: 240px !important;
+  margin: 30px auto 40px !important;
   border-radius: 5px !important;
   height: 35px !important;
   border: none !important;
@@ -220,11 +187,24 @@ body {
 .root-m [class*=_slider__boxWrapper]:after {
   display: none !important;
 }
-.root-m [class*=_slider__sure] {
-  color: #f63 !important;
-}
 .root-m [class*=_slider__imgWrapper] {
-  width: 72%;
+  width: 280px !important;
+  border-radius: 20px !important;
+  height: auto !important;
+  padding-bottom: 20px;
+}
+.root-m [class*=_slider__imgWrapper]:before {
+  content: '\8BF7\8F93\5165\56FE\7247\4E2D\7684\5185\5BB9';
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-family: PingFangSC-Semibold;
+  font-size: 21px;
+  color: #111111;
+  width: 190px;
 }
 .root-m [class*=_slider__imgWrapper]:after {
   content: '';
@@ -239,5 +219,88 @@ body {
 }
 .root-m [class*=_slider__imgWrapper] input[class*=_slider__codeInput] {
   height: 2.2em !important;
+}
+.root-m [class*=_slider__sure] {
+  margin-top: 10px;
+}
+.root-m [class*=_slider__img__] {
+  padding-top: 70px;
+}
+.root-m [class*=_slider__sure] {
+  color: #fff !important;
+  background: #FF6633 !important;
+  border-radius: 40px !important;
+  width: 240px !important;
+  height: 40px !important;
+}
+.root-m [class*=_slider__codeInput] {
+  background: #EEEEEE !important;
+  border-radius: 35px !important;
+  height: 35px !important;
+  line-height: 35px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  border: none !important;
+  color: #bbb !important;
+}
+.root-m [class*=_slider__codeInput] input::-webkit-input-placeholder,
+.root-m [class*=_slider__codeInput] input::-moz-placeholder,
+.root-m [class*=_slider__codeInput] input:-ms-input-placeholder {
+  color: #bbb !important;
+  font-size: 14px !important;
+}
+.root-m [class*=_slider__imgTip] {
+  width: 220px !important;
+  text-align: center !important;
+}
+.root-m [class*=_slider__changeImg] {
+  color: #0094ff !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  -webkit-overflow-scrolling: touch;
+  font-size: 1.4rem;
+  font-weight: 100;
+  font-family: "PingFangSC-Regular", "Microsoft YaHei", "Helvetica Neue", "Helvetica", "Arial", "WenQuanYi Micro Hei", sans-serif;
+}
+ol,
+li {
+  list-style-type: none;
+}
+.blogbox {
+  padding: 4.4rem 15px 15px;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+input,
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+}
+*,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+.Hide {
+  display: none;
+}
+body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url('https://tinypng.com/images/panda-chewing-2x.png') center no-repeat;
+  background-size: 100% auto;
+}
+.pcbox {
+  width: 280px;
+  margin: 20px auto;
 }
 
