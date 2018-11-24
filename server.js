@@ -27,7 +27,7 @@ server.listen(port, host, (err)=>{
 		console.log('启动出错：' + err);
 	}
 	//open('http://' + host + ':' + port + '/resume.html');
-	//open('http://' + host + ':' + port + '/yodaseed.html');
-	open('http://' + host + ':' + port + '/aboutapp.html');
+	open('http://' + host + ':' + port + '/yodaseed.html');
+	//open('http://' + host + ':' + port + '/aboutapp.html');
 });
 
