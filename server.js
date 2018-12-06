@@ -29,5 +29,6 @@ server.listen(port, host, (err)=>{
 	//open('http://' + host + ':' + port + '/resume.html');
 	open('http://' + host + ':' + port + '/yodaseed.html');
 	//open('http://' + host + ':' + port + '/aboutapp.html');
+	//open('http://' + host + ':' + port + '/mobike.html');
 });
 
